@@ -10,15 +10,15 @@
 <script type="text/javascript">
   $(function() {
     $("a").click(function() {
-      alert("Hello");
+      $(".picture:last").addClass("active");
     })
   })
 </script>
 
 <div class="main">
-  <div class="picture01"><img src="img/pic01.jpg" /></div>
-  <div class="picture02"><img src="img/pic02.jpg" /></div>
-  <div class="picture03"><img src="img/pic03.jpg" /></div>
+  <div class="picture active"><img src="img/pic01.jpg" /></div>
+  <div class="picture"><img src="img/pic02.jpg" /></div>
+  <div class="picture"><img src="img/pic03.jpg" /></div>
   <div class="btnArea">
     <ul>
       <li><p><a href="#">ボタン</a></p></li>
