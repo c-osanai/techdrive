@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>テスト</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  $(function() {
+    $("#back a").click(function() {
+      alert("前へボタンがクリックされました");
+    });
+    $("#next a").click(function() {
+      alert("次へボタンがクリックされました");
+    });
+  });
+</script>
+
+<div class="main">
+  <div class="picture active"><img src="img/pic01.jpg" /></div>
+  <div class="picture"><img src="img/pic02.jpg" /></div>
+  <div class="picture"><img src="img/pic03.jpg" /></div>
+  <div class="btnArea">
+    <ul>
+      <li><p id="back"><a href="#">前へ</a></p></li>
+      <li><p id="next"><a href="#">次へ</a></p></li>
+    </ul>
+  </div>
+</div>
+
+
+
+</body>
+</html>
