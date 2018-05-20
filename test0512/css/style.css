@@ -25,6 +25,13 @@ body {
   display: none;
 }
 
+.picture01, .picture02, .picture03 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
 .active {
   display: block;
 }
