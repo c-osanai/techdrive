@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>テスト</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  var index = 0;
+
+  $(function() {
+    $('#next a').click(function() {
+      index++;
+      if (index == 0) {
+        $(".picture01").addClass("active");
+      } else if (index == 1) {
+        $(".picture01").removeClass("active");
+        $(".picture02").addClass("active");
+      } else if (index == 2) {
+        $(".picture02").removeClass("active");
+        $(".picture03").addClass("active");
+      };
+      console.log(index);
+    });
+    $('#back a').click(function() {
+      index--;
+      if (index == 0) {
+        $(".picture01").addClass("active");
+      } else if (index == -1) {
+        $(".picture01").removeClass("active");
+        $(".picture03").addClass("active");
+      } else if (index == -2){
+        $(".picture03").removeClass("active");
+        $(".picture02").addClass("active");
+      };
+      console.log(index);
+    });
+  });
+</script>
+
+<div class="main">
+  <div class="picture01 active"><img src="img/pic01.jpg" /></div>
+  <div class="picture02"><img src="img/pic02.jpg" /></div>
+  <div class="picture03"><img src="img/pic03.jpg" /></div>
+  <div class="btnArea">
+    <ul>
+      <li><p id="back"><a href="#">前へ</a></p></li>
+      <li><p id="next"><a href="#">次へ</a></p></li>
+    </ul>
+  </div>
+</div>
+
+
+
+</body>
+</html>
