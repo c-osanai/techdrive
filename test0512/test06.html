@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>テスト</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+    var index = 0;
+
+    $(function() {
+      $('#next a').click(function() {
+        var i = index%3;
+        console.log(i);
+        if (i == 0) {
+          $(".picture03").removeClass("active");
+          $(".picture01").addClass("active");
+        } else if (i == 1) {
+          $(".picture01").removeClass("active");
+          $(".picture02").addClass("active");
+        } else if (i == 2) {
+          $(".picture02").removeClass("active");
+          $(".picture03").addClass("active");
+        };
+        index++;
+      });
+
+      $('#back a').click(function() {
+        var i = -index%-3;
+        console.log(i);
+        if (i == 0) {
+          $(".picture03").removeClass("active");
+          $(".picture01").addClass("active");
+        } else if (i == 1) {
+          $(".picture01").removeClass("active");
+          $(".picture02").addClass("active");
+        } else if (i == 2){
+          $(".picture02").removeClass("active");
+          $(".picture03").addClass("active");
+        };
+        index--;
+      });
+    });
+
+    function autoloop() {
+      var i = index%3;
+      console.log(i);
+      if (i == 0) {
+        $(".picture03").removeClass("active");
+        $(".picture01").addClass("active");
+      } else if (i == 1) {
+        $(".picture01").removeClass("active");
+        $(".picture02").addClass("active");
+      } else if (i == 2) {
+        $(".picture02").removeClass("active");
+        $(".picture03").addClass("active");
+      };
+      index++;
+      setTimeout(autoloop,3000);
+    };
+    autoloop();
+
+  </script>
+
+<div class="main">
+  <div class="picture01 active"><img src="img/pic01.jpg" /></div>
+  <div class="picture02"><img src="img/pic02.jpg" /></div>
+  <div class="picture03"><img src="img/pic03.jpg" /></div>
+  <div class="btnArea">
+    <ul>
+      <li><p id="back"><a href="#">前へ</a></p></li>
+      <li><p id="next"><a href="#">次へ</a></p></li>
+    </ul>
+  </div>
+</div>
+
+
+
+</body>
+</html>
