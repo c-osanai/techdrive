@@ -10,54 +10,42 @@
   <script type="text/javascript">
     var index = 0;
 
+    function pager() {
+      $(".picture01, .picture02, .picture03").removeClass("active");
+
+      if (index == 0) {
+        $(".picture01").addClass("active");
+      } else if (index == 1) {
+        $(".picture02").addClass("active");
+      } else if (index == 2) {
+        $(".picture03").addClass("active");
+      };
+    };
+
     $(function() {
       $('#next a').click(function() {
-        var i = index%3;
-        console.log(i);
-        if (i == 0) {
-          $(".picture03").removeClass("active");
-          $(".picture01").addClass("active");
-        } else if (i == 1) {
-          $(".picture01").removeClass("active");
-          $(".picture02").addClass("active");
-        } else if (i == 2) {
-          $(".picture02").removeClass("active");
-          $(".picture03").addClass("active");
-        };
         index++;
+        index = (index + 3) % 3
+        console.log(index);
+
+        pager();
       });
 
       $('#back a').click(function() {
-        var i = -index%-3;
-        console.log(i);
-        if (i == 0) {
-          $(".picture03").removeClass("active");
-          $(".picture01").addClass("active");
-        } else if (i == 1) {
-          $(".picture01").removeClass("active");
-          $(".picture02").addClass("active");
-        } else if (i == 2){
-          $(".picture02").removeClass("active");
-          $(".picture03").addClass("active");
-        };
         index--;
+        index = (index + 3) % 3
+        console.log(index);
+
+        pager();
       });
     });
 
     function autoloop() {
-      var i = index%3;
-      console.log(i);
-      if (i == 0) {
-        $(".picture03").removeClass("active");
-        $(".picture01").addClass("active");
-      } else if (i == 1) {
-        $(".picture01").removeClass("active");
-        $(".picture02").addClass("active");
-      } else if (i == 2) {
-        $(".picture02").removeClass("active");
-        $(".picture03").addClass("active");
-      };
       index++;
+      index = (index + 3) % 3
+
+      pager();
+
       setTimeout(autoloop,3000);
     };
     autoloop();
