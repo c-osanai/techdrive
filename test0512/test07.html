@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>テスト</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(function() {
+
+  var images = ["img/pic01.jpg", "img/pic02.jpg", "img/pic03.jpg"];
+
+  $.each(images, function(index, val) {
+    $(".main").append('<div class="picture0' + (index+1) + '"><img src="' + images[index] + '" /></div>');
+  });
+
+  $('.picture01').addClass("active");
+
+});
+
+</script>
+</head>
+<body>
+
+
+<div class="main">
+
+  <div class="btnArea">
+    <ul>
+      <li><p id="back"><a href="#">前へ</a></p></li>
+      <li><p id="next"><a href="#">次へ</a></p></li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
