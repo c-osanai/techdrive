@@ -12,29 +12,28 @@ $(function() {
   var images = ["img/pic01.jpg", "img/pic02.jpg", "img/pic03.jpg"];
 
   $.each(images, function(index, val) {
-    $(".main").append('<div class="picture0' + (index+1) + '"><img src="' + images[index] + '" /></div>');
+    $(".main").append('<div class="picture"><img src="' + images[index] + '" /></div>');
   });
 
-  $('.picture01').addClass("active");
+  $('.picture:first').addClass("active");
 
   var index = 0;
 
   function pager() {
-    $(".picture01, .picture02, .picture03").removeClass("active");
+    $('.picture').removeClass("active");
 
-    if (index == 0) {
-      $(".picture01").addClass("active");
-    } else if (index == 1) {
-      $(".picture02").addClass("active");
-    } else if (index == 2) {
-      $(".picture03").addClass("active");
-    };
+    if(index == (index + images.length) % images.length) {
+      console.log(index);
+      $('.picture').addClass("active");
+    } else {
+      $('.picture').removeClass("active");
+    }
   };
 
   $(function() {
     $('#next a').click(function() {
       index++;
-      index = (index + 3) % 3
+      index = (index + images.length) % images.length
       console.log(index);
 
       pager();
@@ -42,7 +41,7 @@ $(function() {
 
     $('#back a').click(function() {
       index--;
-      index = (index + 3) % 3
+      index = (index + images.length) % images.length
       console.log(index);
 
       pager();
@@ -51,7 +50,7 @@ $(function() {
 
   function autoloop() {
     index++;
-    index = (index + 3) % 3
+    index = (index + images.length) % images.length
 
     pager();
 
