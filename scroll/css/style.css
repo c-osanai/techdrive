@@ -12,51 +12,34 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-.main01 {
+.main {
   width: 800px;
-  height: 600px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.cl01 {
   background: #d9edf7;
-  margin: 0 auto;
-  position: relative;
 }
 
-.main02 {
-  width: 800px;
-  height: 600px;
+.cl02 {
   background: #1b95e0;
-  margin: 0 auto;
-  position: relative;
 }
 
-.main03 {
-  width: 800px;
-  height: 600px;
+.cl03 {
   background: #5cb85c;
-  margin: 0 auto;
-  position: relative;
 }
 
-.main04 {
-  width: 800px;
-  height: 600px;
+.cl04 {
   background: #115A71;
-  margin: 0 auto;
-  position: relative;
 }
-.main05 {
-  width: 800px;
-  height: 600px;
+.cl05 {
   background: #f0ad4e;
-  margin: 0 auto;
-  position: relative;
 }
 
-.main06 {
-  width: 800px;
-  height: 600px;
+.cl06 {
   background: #ededed;
-  margin: 0 auto;
-  position: relative;
 }
 
 .inner {
