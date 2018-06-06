@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>テスト</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  $(function() {
+
+    //スクロールが始まったら
+    $(window).scroll(function() {
+      //スクロールの位置を変数topへ
+      var top = $(window).scrollTop();
+      console.log(top);
+      //topが100以上の時
+      if (top > 100) {
+        $('.main .inner p').fadeIn('slow');
+      } else {
+        $('.main .inner p').fadeOut('slow');
+      }
+    })
+  });
+</script>
+
+<div class="main cl01"><div class="inner">エリア1<p>コンテンツ</p></div></div>
+<div class="main cl02"><div class="inner">エリア2</div></div>
+<div class="main cl03"><div class="inner">エリア3</div></div>
+<div class="main cl04"><div class="inner">エリア4</div></div>
+<div class="main cl05"><div class="inner">エリア5</div></div>
+<div class="main cl06"><div class="inner">エリア6</div></div>
+
+<footer>
+
+</footer>
+
+</body>
+</html>
