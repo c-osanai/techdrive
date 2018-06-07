@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>テスト</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+.main {
+  height: 3000px;
+}
+
+.main li {
+  display: none;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+
+  $(function(){
+
+    //スクロールが始まったら
+    $(window).scroll(function() {
+
+      var top = $(window).scrollTop();
+      if (top > 100) {
+        $('#box01').fadeIn('slow');
+      } if (top > 200) {
+        $('#box02').fadeIn('slow');
+      } if (top > 300) {
+        $('#box03').fadeIn('slow');
+      } if (top > 400) {
+        $('#box04').fadeIn('slow');
+      } if (top > 500) {
+        $('#box05').fadeIn('slow');
+      } if (top > 600) {
+        $('#box06').fadeIn('slow');
+      }
+
+    });
+
+  });
+
+</script>
+
+<div class="main cl07">
+  <ul>
+    <li id="box01">コンテンツ</li>
+    <li id="box02">コンテンツ</li>
+    <li id="box03">コンテンツ</li>
+    <li id="box04">コンテンツ</li>
+    <li id="box05">コンテンツ</li>
+    <li id="box06">コンテンツ</li>
+  </ul>
+</div>
+
+<footer>
+
+</footer>
+
+</body>
+</html>
