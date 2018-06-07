@@ -19,6 +19,10 @@ body {
   position: relative;
 }
 
+.main p {
+  display: none;
+}
+
 .cl01 {
   background: #d9edf7;
 }
@@ -42,6 +46,11 @@ body {
   background: #ededed;
 }
 
+.cl07 {
+  background: #fff;
+  height: 1400px;
+}
+
 .inner {
   position: absolute;
   top: 0;
@@ -54,7 +63,6 @@ body {
   text-align: center;
   font-size: 1.2rem;
 }
-
 
 footer {
   overflow: hidden;
