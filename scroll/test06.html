@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>テスト</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+.main {
+  height: 3000px;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+  $(function() {
+
+    //スクロールが始まったら
+    $(window).scroll(function() {
+      //スクロールの位置を変数topへ
+      var top = $(window).scrollTop();
+
+      var elm = top % 3
+      
+      $('.main').removeClass('blue');
+      $('.main').removeClass('green');
+      $('.main').removeClass('red');
+
+      if (elm == 0) {
+        $('.main').addClass('blue');
+      } else if (elm == 1) {
+        $('.main').addClass('green');
+      } else if (elm == 2) {
+        $('.main').addClass('red');
+      }
+
+    });
+  });
+</script>
+
+<div class="main"><div class="inner">エリア1</div></div>
+
+
+<footer>
+
+</footer>
+
+</body>
+</html>
