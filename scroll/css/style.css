@@ -51,6 +51,18 @@ body {
   height: 1400px;
 }
 
+.blue {
+  background: #0000ff;
+}
+
+.green {
+  background: #008800;
+}
+
+.red {
+  background: #ff0000;
+}
+
 .inner {
   position: absolute;
   top: 0;
