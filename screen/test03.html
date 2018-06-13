@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>情報を配列からとる</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+
+  <script>
+  $(function(){
+      var names = ['佐藤', '齊藤', '鈴木', '田中', '山本', '中島', '大野', '織田'];
+
+      $.each(names, function(index, val) {
+        var $elm = $('<div class="name"></div>').appendTo('#test');
+        $elm.text(val);
+      });
+  })
+  </script>
+
+  <div id="name" style="display:none">Sato</div>
+
+  <div id="test">
+      <div class="name"></div>
+  </div>
+
+
+
+
+<footer>
+
+</footer>
+
+</body>
+</html>

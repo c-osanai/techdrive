@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+html { font-size: 62.5%; }
+
+body {
+  color: #333333;
+  font: 14px/1.9 'Noto Sans JP', Arial, Verdana, 游ゴシック, YuGothic,'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo,sans-serif;
+  letter-spacing: normal;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.main {
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.odd {
+  background: #0000ff;
+}
+
+.even {
+  background: #ffff00;
+}

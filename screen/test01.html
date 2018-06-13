@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>3の倍数ではなくて、偶数奇数で背景色を変える</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+
+  <script>
+  $(function(){
+      var name = $('#name').text();
+
+      for (var i =0; i < 10; i++) {
+        var $elm = $('<div class="name"></div>').appendTo('#test');
+
+        $elm.text((i+1) + name);
+
+        console.log(i % 2, (i+1));
+
+        if (i % 2 == 0) {
+          $elm.css('background', '#0000ff');
+        } else {
+          $elm.css('background', '#ffff00');
+        }
+      }
+  })
+  </script>
+
+  <div id="name" style="display:none">Sato</div>
+
+  <div id="test">
+      <div class="name"></div>
+  </div>
+
+
+
+
+<footer>
+
+</footer>
+
+</body>
+</html>
