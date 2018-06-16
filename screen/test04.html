@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[画面を作る]少し複雑な情報を扱う</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style></style>
+<script>
+  $(function() {
+    var profiles = [
+      {name : '佐藤', age: 20},
+      {name : '齊藤', age: 21},
+      {name : '鈴木', age: 23},
+      {name : '田中', age: 19}
+    ];
+
+    $.each(profiles, function(index, val) {
+      var $profList = $('<li><div class="name"></div><div class="age"></div></li>').appendTo('ul');
+      var $name = $profList.find('.name').text(val['name']);
+      var $age = $profList.find('.age').text(val['age']);
+
+      console.log(val['name']);
+      console.log(val['age']);
+    });
+
+  });
+</script>
+</head>
+<body>
+
+
+
+<ul></ul>
+
+
+
+
+<footer></footer>
+
+</body>
+</html>
