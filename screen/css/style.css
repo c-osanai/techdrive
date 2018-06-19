@@ -26,3 +26,11 @@ body {
 .even {
   background: #ffff00;
 }
+
+.active {
+  display: block;
+}
+
+.passive {
+  display: none;
+}

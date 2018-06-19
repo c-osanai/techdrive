@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[画面を作る]少し複雑な情報を扱う</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style></style>
+<script>
+  $(function() {
+    var answer;
+    var profiles = [
+      {name : '佐藤', age: 20},
+      {name : '齊藤', age: 21},
+      {name : '鈴木', age: 23},
+      {name : '田中', age: 19}
+    ];
+
+    $.each(profiles, function(index, val) {
+      var $profList = $('<li><div class="name"></div><div class="age"></div></li>').appendTo('ul');
+      $profList.find('.name').text(val['name']);
+      $profList.find('.age').text(val['age']);
+    });
+
+    for (i = 0; i < profiles.length; i++) {
+      var newprofile = profiles[i];
+      //console.log(profile['name']);
+      if (newprofile['age'] == '23') {
+        answer = i;
+        break;
+      }
+    }
+
+    console.log(answer);
+
+    $('li').addClass('passive');
+    $('li').filter(function (answer) {
+      return answer == i;
+    }).removeClass('passive');
+
+    //$('li').addClass('passive');
+    //$('li').eq(answer).removeClass('passive');
+
+    //var result = $.grep(profiles,function(obj, idx) {
+    //    return (obj.age == 23);
+    //});
+
+    //console.log(JSON.stringify(result));
+    //console.log(result);
+
+    //profiles.filter(function(item, index) {
+      //console.log(item['age']);
+      //return item['age'] == 23;
+    //}).css('background', '#00ffff');
+
+  });
+</script>
+</head>
+<body>
+
+
+
+<ul></ul>
+
+
+
+
+<footer></footer>
+
+</body>
+</html>
