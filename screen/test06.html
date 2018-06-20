@@ -19,25 +19,25 @@
       {name : '齊藤', age: 19}
     ];
 
-    $.each(profiles, function(index, val) {
-      var $profList = $('<li><div class="name"></div><div class="age"></div></li>').appendTo('ul');
-      $profList.find('.name').text(val['name']);
-      $profList.find('.age').text(val['age']);
-    });
+    //$.each(profiles, function(index, val) {
+    //  var $profList = $('<li><div class="name"></div><div class="age"></div></li>').appendTo('ul');
+    //  $profList.find('.name').text(val['name']);
+    //  $profList.find('.age').text(val['age']);
+    //});
 
     for (i = 0; i < profiles.length; i++) {
-      var $sortProf = profiles[i];
-
-      if ($sortProf['name'] == '齊藤' && $sortProf['age'] == '27') {
+      var $sortPlof = profiles[i];
+      if ($sortPlof['name'] == '齊藤' && $sortPlof['age'] == '27') {
         answer = i;
         break;
       }
     }
+    console.log($sortPlof);
 
-    $('li').addClass('passive');
-    $('li').filter(function (answer) {
-      return answer == i;
-    }).removeClass('passive');
+    var $profList = $('<li><div class="name"></div><div class="age"></div></li>').appendTo('ul');
+    $profList.find('.name').text($sortPlof['name']);
+    $profList.find('.age').text($sortPlof['age']);
+
 
   });
 </script>
