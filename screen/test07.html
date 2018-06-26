@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[画面を作る]データをソートする。</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style></style>
+<script>
+$(function() {
+  var profiles = [
+    {name : '佐藤', age: 20},
+    {name : '齊藤', age: 21},
+    {name : '鈴木', age: 23},
+    {name : '田中', age: 19},
+    {name : '齊藤', age: 27},
+    {name : '佐藤', age: 25},
+    {name : '齊藤', age: 22}
+  ];
+
+  profiles.sort(function(a,b) {
+    if (a.age < b.age) return -1;
+    if (a.age > b.age) return 1;
+    return 0;
+  });
+  console.log(profiles);
+
+  $.each(profiles, function(index, val) {
+    var $profList = $('<li><div class="name"></div><div class="age"></div></li>').appendTo('ul');
+    $profList.find('.name').text(val['name']);
+    $profList.find('.age').text(val['age']);
+  });
+
+});
+</script>
+</head>
+<body>
+
+<ul></ul>
+
+<footer></footer>
+
+</body>
+</html>
