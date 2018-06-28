@@ -25,19 +25,12 @@ $(function() {
     return 0;
   });
 
-  for (i = 0; i < profiles.length; i++) {
-    var newprofile = profiles[i];
-    if (newprofile['name'] == '齊藤') {
-      answer = newprofile;
-      break;
-    }
-  }
-  console.log(answer);
-
   $.each(profiles, function(index, val) {
-    var $profList = $('<li><div class="name"></div><div class="age"></div></li>').appendTo('ul');
-    $profList.find('.name').text(val['name']);
-    $profList.find('.age').text(val['age']);
+    if (val['name'] == '齊藤') {
+      var $profList = $('<li><div class="name"></div><div class="age"></div></li>').appendTo('ul');
+      var $name = $profList.find('.name').text(val['name']);
+      var $age = $profList.find('.age').text(val['age']);
+    }
   });
 
 });
