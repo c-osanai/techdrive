@@ -8,7 +8,6 @@
 <style></style>
 <script>
   $(function() {
-    var answer;
     var profiles = [
       {name : '佐藤', age: 20},
       {name : '齊藤', age: 21},
@@ -19,26 +18,13 @@
       {name : '齊藤', age: 19}
     ];
 
-    //$.each(profiles, function(index, val) {
-    //  var $profList = $('<li><div class="name"></div><div class="age"></div></li>').appendTo('ul');
-    //  $profList.find('.name').text(val['name']);
-    //  $profList.find('.age').text(val['age']);
-    //});
-
-    for (i = 0; i < profiles.length; i++) {
-      var $sortPlof = profiles[i];
-      if ($sortPlof['name'] == '齊藤' && $sortPlof['age'] == '27') {
-        answer = i;
-        break;
+    $.each(profiles, function(index, val) {
+      if (val['name'] == '齊藤' && val['age'] == 27) {
+        var $profList = $('<li><div class="name"></div><div class="age"></div></li>').appendTo('ul');
+        var $name = $profList.find('.name').text(val['name']);
+        var $age = $profList.find('.age').text(val['age']);
       }
-    }
-    console.log($sortPlof);
-
-    var $profList = $('<li><div class="name"></div><div class="age"></div></li>').appendTo('ul');
-    $profList.find('.name').text($sortPlof['name']);
-    $profList.find('.age').text($sortPlof['age']);
-
-
+    });
   });
 </script>
 </head>
