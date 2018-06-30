@@ -24,13 +24,13 @@
 
     for (i = 0; i < profiles.length; i++) {
       var newprofile = profiles[i];
-      //console.log(profile['name']);
       if (newprofile['age'] == '23') {
         answer = i;
         break;
       }
     }
 
+    console.log(profiles[i]);
     console.log(answer);
 
     $('li').addClass('passive');
