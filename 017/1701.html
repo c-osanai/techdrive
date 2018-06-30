@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>自分で関数を作成して、使用する。 #17</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style></style>
+<script>
+  $(function() {
+    // 定義
+    var sumAge = function(){
+      var ages = [ 10,15,20,25,30 ];
+      // ここに続きを書いてください。
+      sum = ages.reduce((a,x) => a+=x,0);
+      $('.result').text('年齢の合計は' + sum +'です。');
+    }
+
+    // 実行
+    var age = sumAge();
+  });
+</script>
+</head>
+<body>
+
+
+
+<p class="result"></p>
+
+
+
+<footer></footer>
+
+</body>
+</html>
