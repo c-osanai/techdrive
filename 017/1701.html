@@ -12,8 +12,14 @@
     var sumAge = function(){
       var ages = [ 10,15,20,25,30 ];
       // ここに続きを書いてください。
-      sum = ages.reduce((a,x) => a+=x,0);
-      $('.result').text('年齢の合計は' + sum +'です。');
+      //sum = ages.reduce((a,x) => a+=x,0);
+      //$('.result').text('年齢の合計は' + sum +'です。');
+      var result = 0;
+      for (var i = 0; i < ages.length; i++) {
+        result += ages[i];
+        $('.result').text('年齢の合計は' + result + 'です。');
+      }
+      return result;
     }
 
     // 実行
