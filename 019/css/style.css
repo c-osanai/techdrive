@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+html { font-size: 62.5%; }
+
+body {
+  color: #333333;
+  font: 14px/1.9 'Noto Sans JP', Arial, Verdana, 游ゴシック, YuGothic,'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo,sans-serif;
+  letter-spacing: normal;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.main {
+  width: 800px;
+  height: 3000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.main p {
+  display: none;
+}
+
+.main li {
+  height: 200px;
+  list-style: none;
+}
+
+#box01, #box02, #box03, #box04, #box05, #box06 {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.cl01 {
+  background: #d9edf7;
+}
+
+.cl02 {
+  background: #1b95e0;
+}
+
+.cl03 {
+  background: #5cb85c;
+}
+
+.cl04 {
+  background: #115A71;
+}
+.cl05 {
+  background: #f0ad4e;
+}
+
+.cl06 {
+  background: #ededed;
+}
+
+.cl07 {
+  background: #fff;
+  height: 1400px;
+}
+
+.inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+footer {
+  overflow: hidden;
+  margin: 40px 0 0;
+  width: 100%;
+  background: #333;
+  height: 100px;
+}

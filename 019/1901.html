@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>関数を使ってスクロールを作成してみましょう。 #19</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style></style>
+<script>
+  $(function() {
+    // 定義
+    function fadeInOnScroll(fadeInPoints){
+       var top = $(window).scrollTop();
+       // ここに書く
+       console.log(fadeInPoints);
+       console.log(top);
+       if (top > fadeInPoints[0]) {
+         $('#box01').fadeIn('800');
+       }
+       if (top > fadeInPoints[1]) {
+         $('#box02').fadeIn('800');
+       }
+       if (top > fadeInPoints[2]) {
+         $('#box03').fadeIn('800');
+       }
+       if (top > fadeInPoints[3]) {
+         $('#box04').fadeIn('800');
+       }
+       if (top > fadeInPoints[4]) {
+         $('#box05').fadeIn('800');
+       }
+       if (top > fadeInPoints[5]) {
+         $('#box06').fadeIn('800');
+       }
+
+    }
+
+    var fadeInPoints = [0, 100, 200, 300, 400, 500];
+
+
+    // 実行
+    $(document).scroll(function() {
+      fadeInOnScroll(fadeInPoints);
+    });
+  });
+</script>
+</head>
+<body>
+
+
+
+<div class="main">
+  <div class="inner">
+    <!-- li の高さが100px ごとの間隔で置かれているといい感じにfadeInするのが見えるかと思います。 -->
+    <div class="main cl07">
+      <ul>
+        <li id="box01">コンテンツ</li>
+        <li id="box02">コンテンツ</li>
+        <li id="box03">コンテンツ</li>
+        <li id="box04">コンテンツ</li>
+        <li id="box05">コンテンツ</li>
+        <li id="box06">コンテンツ</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<footer></footer>
+
+</body>
+</html>
