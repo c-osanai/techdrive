@@ -12,27 +12,9 @@
     function fadeInOnScroll(fadeInPoints){
        var top = $(window).scrollTop();
        // ここに書く
-       console.log(fadeInPoints);
-       console.log(top);
-       if (top > fadeInPoints[0]) {
-         $('#box01').fadeIn('800');
-       }
-       if (top > fadeInPoints[1]) {
-         $('#box02').fadeIn('800');
-       }
-       if (top > fadeInPoints[2]) {
-         $('#box03').fadeIn('800');
-       }
-       if (top > fadeInPoints[3]) {
-         $('#box04').fadeIn('800');
-       }
-       if (top > fadeInPoints[4]) {
-         $('#box05').fadeIn('800');
-       }
-       if (top > fadeInPoints[5]) {
-         $('#box06').fadeIn('800');
-       }
-
+       $.each(fadeInPoints, function(i, val) {
+         console.log(i + ':' + val);
+       });
     }
 
     var fadeInPoints = [0, 100, 200, 300, 400, 500];
