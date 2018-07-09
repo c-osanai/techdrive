@@ -13,7 +13,10 @@
        var top = $(window).scrollTop();
        // ここに書く
        $.each(fadeInPoints, function(i, val) {
-         console.log(i + ':' + val);
+         if (top > fadeInPoints[i]) {
+           $('#box0' + (i + 1)).css('opacity','1');
+         }
+         console.log(top);
        });
     }
 
