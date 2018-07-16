@@ -17,15 +17,13 @@
 
     function answerProfile(){
       // ここら辺のロジックは変更する必要があります。
-      var answer;
       for (var i = 0; i < profiles.length; i++) {
         var newprofile = profiles[i];
         if (newprofile['age'] == '23') {
-          answer = i;
           break;
         }
       }
-      return profiles[i];
+      return newprofile;
     } // functionはここまで
 
     console.log(answerProfile()); // {name : '鈴木', age: 23} が出力される。
