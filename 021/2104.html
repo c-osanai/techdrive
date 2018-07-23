@@ -34,7 +34,7 @@
         var message = jsonParser(data);
         var list = $('<li>コンテンツ</li>').appendTo('ul');
         setTimeout(function(){
-          list.append('ul').text(message);
+          list.text(message);
         },800);
       }).fail(function( data ) {
         $( '<font color="red">読み込みNG(ChromeではNG)</font>' ).appendTo('ul');
