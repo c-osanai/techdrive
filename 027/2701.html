@@ -3,15 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <title>【実践編】JavaScriptを使って何か一つ作りあげる。 #27</title>
-<!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript" ></script>-->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript" ></script>
 <style></style>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+
+    function scrollPage() {
+      $(window).on('scroll', function() {
+        var docHeight = $(document).innerHeight(),
+            windowHeight = $(window).innerHeight(),
+            pageBottom = docHeight - windowHeight;
+          if(pageBottom <= $(window).scrollTop()) {
+            //ウィンドウの一番下までスクロールした時に実行
+            ajax();
+          }
+      });
+      console.log(windowHeight);
+      console.log(docHeight);
+    }
+
+    function ajax(){
+      var $loading = $(".loading");
+      var def = $.ajax( {
+        url: 'http://weather.livedoor.com/forecast/webservice/json/v1?city=400040',
+        dataType : 'jsonp',
+        beforeSend:function(){
+          $loading.removeClass("is-hide");
+        }
+      }).done(function( data ) {
+        var message = jsonParser(data);
+        $( '<li>' + message + '</li>' ).appendTo('ul');
+      }).fail(function( data ) {
+        $( '<font color="red">読み込みNG(ChromeではNG)</font>' ).appendTo('ul');
+      });
+      setTimeout(function(){
+        $.when(def).done(function(data){
+          $loading.addClass("is-hide");
+        });
+      },400);
+    }
+
+    function jsonParser(data) {
+      var message = data.message;
+      return message;
+    }
+
+    scrollPage();
+
+  });
+</script>
 </head>
 <body>
 
-<p>プルリクエストのテスト</p>
+<div class="main">
+  <div class="loading is-hide">
+    <div class="loading_icon"></div>
+  </div>
+  <ul>
+    <li>コンテンツ</li>
+  </ul>
+</div>
 
-
+<footer></footer>
 </body>
 </html>
