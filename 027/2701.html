@@ -11,9 +11,9 @@
 
     function scrollPage() {
       $(window).on('scroll', function() {
-        var docHeight = $(document).innerHeight(),
-            windowHeight = $(window).innerHeight(),
-            pageBottom = docHeight - windowHeight;
+        var docHeight = $(document).innerHeight(), //ドキュメントの高さ
+        windowHeight = $(window).innerHeight(), //ウィンドウの高さ
+        pageBottom = docHeight - windowHeight; //ドキュメントの高さ - ウィンドウの高さ
           if(pageBottom <= $(window).scrollTop()) {
             //ウィンドウの一番下までスクロールした時に実行
             ajax();
@@ -26,14 +26,16 @@
     function ajax(){
       var $loading = $(".loading");
       var def = $.ajax( {
-        url: 'http://weather.livedoor.com/forecast/webservice/json/v1?city=400040',
-        dataType : 'jsonp',
+        url: 'https://randomuser.me/api',
+        type: "GET",
+        dataType : 'json',
         beforeSend:function(){
           $loading.removeClass("is-hide");
         }
       }).done(function( data ) {
         var message = jsonParser(data);
         $( '<li>' + message + '</li>' ).appendTo('ul');
+
       }).fail(function( data ) {
         $( '<font color="red">読み込みNG(ChromeではNG)</font>' ).appendTo('ul');
       });
@@ -45,7 +47,9 @@
     }
 
     function jsonParser(data) {
-      var message = data.message;
+      var message = '名前<br/>' + data.results[0].name.first　+ ' ' + data.results[0].name.last + '<br/>';
+      message = message + '住所<br/>' + data.results[0].location.city + ' ' + data.results[0].location.street + '<br/>';
+      message = message + '写真<br/>' + '<img src="' + data.results[0].picture.medium + '">';
       return message;
     }
 
@@ -60,9 +64,11 @@
   <div class="loading is-hide">
     <div class="loading_icon"></div>
   </div>
-  <ul>
-    <li>コンテンツ</li>
-  </ul>
+
+  <div class="area">
+
+    <ul></ul>
+  </div>
 </div>
 
 <footer></footer>

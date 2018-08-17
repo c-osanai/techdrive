@@ -13,13 +13,23 @@ body {
 }
 
 .main {
+
   overflow: hidden;
-  padding: 200px 0;
-  height: 600px;
+}
+
+.area {
+  height: 800px;
+  padding-top: 100px;
+  overflow: scroll;
 }
 
 .main li {
   padding: 10px 0;
+  overflow: hidden;
+}
+
+.noheight {
+  height: auto;
 }
 
 .is-hide{
@@ -67,8 +77,9 @@ body {
 }
 
 footer {
-  overflow: hidden;
-  margin: 40px 0 0;
+
+  bottom: 0;
+  margin: 0;
   width: 100%;
   background: #333;
   height: 100px;
